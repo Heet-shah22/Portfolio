@@ -129,6 +129,16 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onNotify }) => {
       className="space-y-4 p-6 sm:p-8 rounded-2xl bg-cyber-card border border-cyber-border shadow-xl relative"
       aria-label="Contact form"
     >
+      {/* Anti-Bot Honeypot: catches automated spam bots without affecting real users */}
+      <input
+        type="text"
+        name="_gotcha"
+        style={{ display: 'none', position: 'absolute', left: '-9999px' }}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
+
       {/* Success Notification Banner */}
       {status === 'success' && (
         <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-3 text-emerald-400 text-sm">
