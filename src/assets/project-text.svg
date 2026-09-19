@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="textBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e101f" />
+      <stop offset="100%" stop-color="#070812" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <filter id="textGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#textBg)" />
+
+  <!-- Neural Net Visual Container -->
+  <rect x="120" y="50" width="560" height="350" rx="14" fill="#13152b" stroke="#252945" stroke-width="2" />
+  <rect x="120" y="50" width="560" height="40" rx="14" fill="#1b1e3b" />
+
+  <circle cx="150" cy="70" r="5" fill="#ef4444" opacity="0.8" />
+  <circle cx="166" cy="70" r="5" fill="#f59e0b" opacity="0.8" />
+  <circle cx="182" cy="70" r="5" fill="#10b981" opacity="0.8" />
+  <text x="400" y="75" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">lstm-text-predictor.py • TensorFlow / Keras</text>
+
+  <!-- Interactive NLP Token Stream -->
+  <g transform="translate(150, 110)">
+    <rect x="0" y="0" width="90" height="36" rx="6" fill="#202447" stroke="#6366f1" stroke-width="1.5" />
+    <text x="45" y="23" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" fill="#a5b4fc">"machine"</text>
+
+    <text x="105" y="23" font-family="'Inter', sans-serif" font-size="14" fill="#64748b">→</text>
+
+    <rect x="125" y="0" width="90" height="36" rx="6" fill="#202447" stroke="#6366f1" stroke-width="1.5" />
+    <text x="170" y="23" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" fill="#a5b4fc">"learning"</text>
+
+    <text x="230" y="23" font-family="'Inter', sans-serif" font-size="14" fill="#64748b">→</text>
+
+    <rect x="250" y="0" width="80" height="36" rx="6" fill="#202447" stroke="#6366f1" stroke-width="1.5" />
+    <text x="290" y="23" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" fill="#a5b4fc">"models"</text>
+
+    <text x="345" y="23" font-family="'Inter', sans-serif" font-size="14" fill="#06b6d4">→</text>
+
+    <!-- Predicted Next Token with Glowing Target -->
+    <rect x="365" y="-3" width="125" height="42" rx="8" fill="#1e2d45" stroke="#06b6d4" stroke-width="2" filter="url(#textGlow)" />
+    <text x="427" y="23" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#22d3ee">"generate"</text>
+  </g>
+
+  <!-- LSTM Architecture Representation -->
+  <g transform="translate(170, 185)">
+    <!-- Layer 1: Tokenizer & Embedding -->
+    <rect x="0" y="0" width="130" height="70" rx="8" fill="#1a1e38" stroke="#3730a3" stroke-width="1.5" />
+    <text x="65" y="28" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#e0e7ff">Dense Embedding</text>
+    <text x="65" y="50" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#818cf8">Vector Dim: 100</text>
+
+    <!-- Connection -->
+    <line x1="130" y1="35" x2="165" y2="35" stroke="#6366f1" stroke-width="2" stroke-dasharray="4 2" />
+
+    <!-- Layer 2: Stacked LSTM -->
+    <rect x="165" y="-10" width="140" height="90" rx="8" fill="#1e2447" stroke="#818cf8" stroke-width="2" />
+    <text x="235" y="24" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#a5b4fc">Stacked LSTM Cells</text>
+    <text x="235" y="45" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#cbd5e1">Hidden Units: 150</text>
+    <text x="235" y="65" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#06b6d4">Dropout: 0.20</text>
+
+    <!-- Connection -->
+    <line x1="305" y1="35" x2="340" y2="35" stroke="#06b6d4" stroke-width="2" stroke-dasharray="4 2" />
+
+    <!-- Layer 3: Softmax Distribution -->
+    <rect x="340" y="0" width="125" height="70" rx="8" fill="#16273f" stroke="#06b6d4" stroke-width="1.5" />
+    <text x="402" y="28" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#67e8f9">Softmax Output</text>
+    <text x="402" y="50" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#38bdf8">P(w | context)</text>
+  </g>
+
+  <!-- Output distribution bars -->
+  <g transform="translate(190, 310)">
+    <text x="0" y="15" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94a3b8">generate (84.2%)</text>
+    <rect x="120" y="5" width="220" height="12" rx="4" fill="#06b6d4" />
+
+    <text x="0" y="38" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">process  (9.1%)</text>
+    <rect x="120" y="28" width="24" height="12" rx="4" fill="#334155" />
+
+    <text x="0" y="61" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">predict  (4.5%)</text>
+    <rect x="120" y="51" width="12" height="12" rx="4" fill="#334155" />
+  </g>
+</svg>

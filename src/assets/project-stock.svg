@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="stockBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1c" />
+      <stop offset="100%" stop-color="#060912" />
+    </linearGradient>
+    <linearGradient id="candleUp" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <filter id="stockGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#stockBg)" />
+
+  <!-- Terminal Window Mockup -->
+  <rect x="120" y="50" width="560" height="350" rx="12" fill="#0f1626" stroke="#1e293b" stroke-width="2" />
+  <rect x="120" y="50" width="560" height="40" rx="12" fill="#152035" />
+
+  <circle cx="150" cy="70" r="5" fill="#ef4444" opacity="0.8" />
+  <circle cx="166" cy="70" r="5" fill="#f59e0b" opacity="0.8" />
+  <circle cx="182" cy="70" r="5" fill="#10b981" opacity="0.8" />
+  <text x="400" y="75" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" fill="#94a3b8">spark-analytics.py • Sentiment &amp; Linear Regression</text>
+
+  <!-- Financial Candlesticks & Spark Lines -->
+  <!-- Bar 1 -->
+  <line x1="180" y1="180" x2="180" y2="280" stroke="#0ea5e9" stroke-width="2" />
+  <rect x="172" y="200" width="16" height="50" rx="2" fill="#0ea5e9" />
+
+  <!-- Bar 2 -->
+  <line x1="220" y1="150" x2="220" y2="260" stroke="#06b6d4" stroke-width="2" />
+  <rect x="212" y="170" width="16" height="70" rx="2" fill="#06b6d4" />
+
+  <!-- Bar 3 -->
+  <line x1="260" y1="190" x2="260" y2="300" stroke="#38bdf8" stroke-width="2" />
+  <rect x="252" y="210" width="16" height="60" rx="2" fill="#38bdf8" />
+
+  <!-- NLP & Sentiment Pill -->
+  <rect x="320" y="120" width="320" height="75" rx="8" fill="#16233a" stroke="#06b6d4" stroke-width="1" stroke-opacity="0.5" />
+  <text x="340" y="145" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#22d3ee">NLP &amp; Sentiment Classification</text>
+  <text x="340" y="168" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8">TF-IDF Vectorizer • Positive Score: +0.74</text>
+  <text x="340" y="185" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">LLM Analytical Commentary Pipeline</text>
+
+  <!-- Spark ETL Pipeline Box -->
+  <rect x="320" y="215" width="320" height="75" rx="8" fill="#16233a" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.5" />
+  <text x="340" y="240" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#38bdf8">Apache Spark Distributed Transform</text>
+  <text x="340" y="263" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8">MongoDB Ingestion → Linear Regression</text>
+  <text x="340" y="280" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">Clustering &amp; Statistical Feature Scaling</text>
+
+  <!-- Trend Line -->
+  <path d="M 160 270 Q 240 210 320 230 T 480 180 T 630 150" fill="none" stroke="#22d3ee" stroke-width="3" filter="url(#stockGlow)" />
+  <circle cx="630" cy="150" r="5" fill="#22d3ee" />
+
+  <!-- Academic Disclaimer Footer -->
+  <text x="400" y="375" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">ACADEMIC RESEARCH: EXPLORATORY ML/NLP MARKET DATA PIPELINE</text>
+</svg>
