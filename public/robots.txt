@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://heetshah.dev/sitemap.xml
+Sitemap: https://portfolio-tzx9.vercel.app/sitemap.xml
