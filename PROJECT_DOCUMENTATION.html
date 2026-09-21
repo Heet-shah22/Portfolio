@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heet Shah Portfolio - Complete Technical Documentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --accent: #06b6d4;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --border: #e2e8f0;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      font-size: 14px;
+      padding: 40px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .no-print {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 12px 20px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .btn-print {
+      background: #06b6d4;
+      color: #0f172a;
+      font-weight: 700;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 13px;
+      transition: opacity 0.2s;
+    }
+    .btn-print:hover { opacity: 0.9; }
+
+    header {
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .meta-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
+
+    .meta-item strong {
+      color: var(--text);
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 36px;
+      margin-bottom: 16px;
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1e293b;
+      margin-top: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 14px;
+      color: #334155;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 16px;
+      color: #334155;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 13px;
+    }
+
+    th, td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--bg-alt);
+      font-weight: 600;
+      color: #0f172a;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    tr:nth-child(even) td {
+      background: #fafafa;
+    }
+
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid #e2e8f0;
+    }
+
+    pre {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 16px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      margin: 16px 0;
+      line-height: 1.5;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      background: var(--card-bg);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .card-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      color: #334155;
+      margin-right: 6px;
+      margin-bottom: 4px;
+    }
+
+    .flowchart {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      margin: 20px 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .footer-doc {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        font-size: 11pt;
+        color: #000;
+      }
+      .no-print { display: none; }
+      h2 { page-break-after: avoid; }
+      table, pre, .card { page-break-inside: avoid; }
+      @page {
+        size: A4;
+        margin: 18mm 15mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <div><strong>Heet Shah Portfolio Technical Documentation</strong> (A to Z Architecture Guide)</div>
+    <button class="btn-print" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <header>
+    <div class="badge">TECHNICAL SPECIFICATION & BLUEPRINT</div>
+    <h1>Heet Shah — Engineering Portfolio Architecture</h1>
+    <p class="subtitle">Complete end-to-end documentation of codebase architecture, component hierarchies, directory mappings, security implementations, and deployment lifecycle.</p>
+    
+    <div class="meta-bar">
+      <div class="meta-item">
+        <strong>Engineer</strong>
+        Heet Shah
+      </div>
+      <div class="meta-item">
+        <strong>Academic Standing</strong>
+        B.Tech CSE (Cyber Security) • 7.8 CGPA
+      </div>
+      <div class="meta-item">
+        <strong>Institution</strong>
+        MIT World Peace University (MIT-WPU)
+      </div>
+      <div class="meta-item">
+        <strong>Live Production URL</strong>
+        portfolio-tzx9.vercel.app
+      </div>
+    </div>
+  </header>
+
+  <h2>1. Executive Summary & Architecture Paradigm</h2>
+  <p>
+    The portfolio is engineered as a high-performance <strong>Single Page Application (SPA)</strong> utilizing the <strong>JAMstack</strong> methodology (JavaScript, APIs, and Markup). Rather than relying on a heavy server runtime or monolithic database, the entire application is pre-compiled into optimized static assets that are distributed across a globally replicated Content Delivery Network (CDN) with edge caching.
+  </p>
+  <p>
+    Key architectural priorities include:
+  </p>
+  <ul>
+    <li><strong>Sub-second Navigation:</strong> Zero full-page refreshes through client-side routing.</li>
+    <li><strong>Defense-in-Depth Security:</strong> Elimination of typical server-side exploit vectors (zero SQL injection, zero RCE) combined with strict HTTP security headers and anti-bot honeypots.</li>
+    <li><strong>Decoupled Content Architecture:</strong> All personal data, projects, milestones, and skills are isolated in strongly-typed data contracts (<code>src/data/</code>) to enable effortless maintenance without touching presentation code.</li>
+    <li><strong>Search Engine Dominance:</strong> Native XML sitemap, canonical metadata, Open Graph cards, and structured Google Search Console verification resulting in #1 ranking on Google.</li>
+  </ul>
+
+  <h2>2. Technology Stack & Framework Inventory</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Layer</th>
+        <th>Technology</th>
+        <th>Version</th>
+        <th>Architectural Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Core Language</strong></td>
+        <td>TypeScript</td>
+        <td>5.7.3</td>
+        <td>Provides compile-time type safety, robust interface contracts, and eliminates runtime undefined exceptions.</td>
+      </tr>
+      <tr>
+        <td><strong>UI Framework</strong></td>
+        <td>React</td>
+        <td>18.3.1</td>
+        <td>Component-based declarative virtual DOM rendering, efficient state reconciliation, and hooks lifecycle.</td>
+      </tr>
+      <tr>
+        <td><strong>Build Engine</strong></td>
+        <td>Vite</td>
+        <td>6.1.0</td>
+        <td>Next-generation ES module bundler delivering sub-100ms local hot reloads and optimized Rollup production tree-shaking.</td>
+      </tr>
+      <tr>
+        <td><strong>Styling</strong></td>
+        <td>Tailwind CSS</td>
+        <td>3.4.17</td>
+        <td>Atomic CSS utility system configured with a customized Dark Cyber palette, glowing rings, and glassmorphism.</td>
+      </tr>
+      <tr>
+        <td><strong>Client Routing</strong></td>
+        <td>React Router DOM</td>
+        <td>6.29.0</td>
+        <td>Client-side browser history management, URL parameter extraction, and route transition handling.</td>
+      </tr>
+      <tr>
+        <td><strong>Iconography</strong></td>
+        <td>Lucide React</td>
+        <td>0.475.0</td>
+        <td>Tree-shakeable SVG cyber icons (Shield, Terminal, Cpu, Database, Send, BookOpen).</td>
+      </tr>
+      <tr>
+        <td><strong>Form Dispatch</strong></td>
+        <td>Formspree API</td>
+        <td>REST JSON</td>
+        <td>Serverless form endpoint handling direct message delivery to <code>heets2211@gmail.com</code> with anti-bot honeypots.</td>
+      </tr>
+      <tr>
+        <td><strong>Hosting / CI-CD</strong></td>
+        <td>Vercel Edge Network</td>
+        <td>Global CDN</td>
+        <td>Continuous deployment pipeline triggered via GitHub webhooks with automatic HTTPS and edge caching.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3. Complete Folder & File Directory Blueprint</h2>
+
+  <h3>Root Configuration Files</h3>
+  <ul>
+    <li><code>package.json</code>: Central manifest declaring scripts (<code>dev</code>, <code>build</code>, <code>preview</code>), dependencies, and engine requirements.</li>
+    <li><code>vite.config.ts</code>: Vite build configuration configuring the official <code>@vitejs/plugin-react</code> plugin.</li>
+    <li><code>tailwind.config.js</code>: Custom Tailwind configuration extending the theme with bespoke cyber colors (<code>#070a0f</code>, <code>#06b6d4</code>, <code>#0d121d</code>) and typography.</li>
+    <li><code>tsconfig.json</code> & <code>tsconfig.node.json</code>: TypeScript compiler configuration enforcing strict null checks and ESNext target compilation.</li>
+    <li><code>vercel.json</code>: Hosting configuration with SPA fallback rewrites and HTTP Security Headers (HSTS, X-Frame-Options, X-Content-Type-Options).</li>
+    <li><code>start.bat</code>: Windows batch automation script allowing 1-click double-click launch of the local dev server and browser.</li>
+    <li><code>.gitignore</code>: Ignores <code>node_modules/</code>, build artifacts (<code>dist/</code>), and temporary environment variables.</li>
+  </ul>
+
+  <h3><code>public/</code> — Static Assets Directory</h3>
+  <p>Files placed here are served directly at the domain root without bundling:</p>
+  <ul>
+    <li><code>public/assets/profile-photo.jpg</code>: High-resolution profile photo of Heet Shah.</li>
+    <li><code>public/assets/resume.pdf</code>: Verified downloadable academic & engineering resume.</li>
+    <li><code>public/sitemap.xml</code>: Search engine roadmap mapping all 10 site routes with crawl priority weightings.</li>
+    <li><code>public/robots.txt</code>: Search engine crawler directives granting full indexation permission (<code>Allow: /</code>).</li>
+    <li><code>public/googlef883bee287a6745e.html</code>: Cryptographic ownership token verifying domain control in Google Search Console.</li>
+    <li><code>public/_redirects</code>: Fallback redirection manifest for non-Vercel static servers.</li>
+  </ul>
+
+  <h3><code>src/data/</code> — Content Data Layer</h3>
+  <p>Decoupled single-source-of-truth files storing all dynamic content:</p>
+  <ul>
+    <li><code>src/data/profile.ts</code>: Personal details, bio narratives, MIT-WPU academic standing, updated CGPA (<strong>7.8</strong>), 12th board score, social links, and Formspree ID (<code>mzezdblj</code>).</li>
+    <li><code>src/data/projects.ts</code>: Full architecture specifications for EcoRevive (Thrift e-commerce + LCA engine), Spark Stock Analysis, and LSTM Text Predictor.</li>
+    <li><code>src/data/skills.ts</code>: 44 categorized technical competencies with proficiency labels across Languages, Frameworks, Databases, and Security.</li>
+    <li><code>src/data/timeline.ts</code>: Milestones spanning academic matriculation, hackathon victories (Hack MIT-WPU), certifications, and future horizons.</li>
+    <li><code>src/data/certifications.ts</code>: Credential database for Full-Stack Development, Python, and Cybersecurity credentials.</li>
+    <li><code>src/data/achievements.ts</code>: Competitive awards, hackathons, and scholarship honors.</li>
+  </ul>
+
+  <h3><code>src/pages/</code> — Route View Controllers</h3>
+  <ul>
+    <li><code>Home.tsx</code>: Landing experience with cybersecurity hero badge, real-time stats counter, featured project highlights, and network canvas.</li>
+    <li><code>About.tsx</code>: Narrative biography, academic journey at MIT-WPU, specialized technical philosophy, and profile photo card.</li>
+    <li><code>Projects.tsx</code>: Multi-category filterable catalog of software architectures with tag-based filtering.</li>
+    <li><code>ProjectDetail.tsx</code>: Comprehensive case study route featuring the dynamic interactive architecture pipeline diagram.</li>
+    <li><code>Skills.tsx</code>: Searchable matrix of 44 technical competencies with real-time text query and category filtering.</li>
+    <li><code>Journey.tsx</code>: Vertical timeline visualization with glowing progression nodes and key highlight badges.</li>
+    <li><code>Certifications.tsx</code>: Verified credentials gallery with interactive modal preview inspection.</li>
+    <li><code>Resume.tsx</code>: Formatted, print-ready digital resume with direct PDF download integration.</li>
+    <li><code>Contact.tsx</code>: Direct communications page with verified contact cards and Formspree contact form.</li>
+    <li><code>NotFound.tsx</code>: Cyber-themed 404 error handler with quick return navigation.</li>
+  </ul>
+
+  <h3><code>src/components/</code> — Modular UI Elements</h3>
+  <ul>
+    <li><code>src/components/layout/Navbar.tsx</code>: Floating glassmorphic header with navigation links, active route highlight, and click debounce protection.</li>
+    <li><code>src/components/layout/Footer.tsx</code>: Footer with copyright, academic branding, and direct communication links.</li>
+    <li><code>src/components/layout/MobileMenu.tsx</code>: Slide-out drawer navigation for tablet and mobile viewport sizes.</li>
+    <li><code>src/components/contact/ContactForm.tsx</code>: Client-side validated form with hidden honeypot field, loading spinner, and Formspree API dispatch.</li>
+    <li><code>src/components/projects/ArchitectureDiagram.tsx</code>: Interactive pipeline visualizer illustrating Frontend, API, Database, and Model workflow steps.</li>
+    <li><code>src/components/common/ScrollProgress.tsx</code>: Neon gradient top progress indicator tracking scroll position.</li>
+    <li><code>src/components/common/SEO.tsx</code>: Dynamic document title and meta tag manager for search engine crawlers.</li>
+    <li><code>src/components/common/BackToTop.tsx</code>: Floating quick-scroll button that triggers smooth page reset.</li>
+  </ul>
+
+  <h2>4. Security Architecture & Threat Defense</h2>
+  <div class="card">
+    <div class="card-title">OWASP & Defense-in-Depth Measures</div>
+    <div class="card-meta">Enterprise-grade security configuration</div>
+    <ul>
+      <li><strong>No Server-Side Vulnerabilities:</strong> Absence of SQL/NoSQL databases and backend Node execution completely eliminates SQL Injection (SQLi) and Remote Code Execution (RCE).</li>
+      <li><strong>XSS Protection:</strong> Built exclusively with React Virtual DOM data-binding. Zero occurrences of <code>dangerouslySetInnerHTML</code>.</li>
+      <li><strong>Clickjacking Defense:</strong> <code>X-Frame-Options: DENY</code> header in <code>vercel.json</code> prevents malicious framing.</li>
+      <li><strong>MIME Sniffing Block:</strong> <code>X-Content-Type-Options: nosniff</code> forces strict MIME interpretation.</li>
+      <li><strong>Spam & Bot Mitigation:</strong> The contact form includes an invisible honeypot (<code>_gotcha</code>) field. Bots filling this field are silently rejected by Formspree.</li>
+      <li><strong>Hardware-Accelerated UX:</strong> Standard native cursor eliminates CPU layout thrashing and UI thread blocking.</li>
+    </ul>
+  </div>
+
+  <h2>5. Continuous Deployment & Google Indexing Lifecycle</h2>
+  <div class="flowchart">
+[Local Machine]
+  │  Edit code in src/
+  │  Test locally: double-click start.bat (localhost:3000)
+  ▼
+[Git Version Control]
+  │  git commit -m "Your update"
+  │  git push origin main (https://github.com/Heet-shah22/Portfolio)
+  ▼
+[Vercel CI/CD Pipeline]
+  │  Webhook triggers automatic build (vite build)
+  │  TypeScript check -> Rollup chunking -> dist/ generated
+  │  Deployed across Global Edge CDN (~20 seconds)
+  ▼
+[Live Production Web]
+  │  Accessible worldwide 24/7 at: https://portfolio-tzx9.vercel.app/
+  ▼
+[Googlebot Search Engine]
+  │  Crawl queue -> Reads sitemap.xml & robots.txt
+  │  Indexed in Google Search database -> Ranked #1 for "Heet Shah"
+  </div>
+
+  <h2>6. Maintenance & Modification Cheat Sheet</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>What you want to edit</th>
+        <th>File to modify</th>
+        <th>Properties to change</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CGPA, Bio, Phone, Email, Socials</td>
+        <td><code>src/data/profile.ts</code></td>
+        <td><code>cgpa</code>, <code>bio</code>, <code>phone</code>, <code>email</code>, <code>linkedin</code></td>
+      </tr>
+      <tr>
+        <td>Add a new Project / Case Study</td>
+        <td><code>src/data/projects.ts</code></td>
+        <td>Append a new object to <code>projectsData</code> array</td>
+      </tr>
+      <tr>
+        <td>Add a new Skill / Tool</td>
+        <td><code>src/data/skills.ts</code></td>
+        <td>Append to <code>skillsData</code> with category & proficiency</td>
+      </tr>
+      <tr>
+        <td>Add a Semester Milestone</td>
+        <td><code>src/data/timeline.ts</code></td>
+        <td>Append a new milestone to <code>timelineData</code></td>
+      </tr>
+      <tr>
+        <td>Add a Certification</td>
+        <td><code>src/data/certifications.ts</code></td>
+        <td>Append to <code>certificationsData</code> with credential URL</td>
+      </tr>
+      <tr>
+        <td>Update Resume File</td>
+        <td><code>public/assets/resume.pdf</code></td>
+        <td>Overwrite with your updated PDF file</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer-doc">
+    Heet Shah • B.Tech Computer Science & Engineering (Cyber Security & Forensics) • MIT-WPU, Pune<br>
+    Production Site: https://portfolio-tzx9.vercel.app/ • GitHub: https://github.com/Heet-shah22/Portfolio
+  </div>
+
+</body>
+</html>
