@@ -348,7 +348,7 @@ export const Home: React.FC = () => {
               </div>
 
               <p className="text-sm text-slate-300 leading-relaxed mb-4">
-                Pursuing B.Tech in Computer Science and Engineering with specialization in Cyber Security and Forensics. Current standing in 3rd Year (5th Semester) maintaining a 7.12 CGPA.
+                Pursuing B.Tech in Computer Science and Engineering with specialization in Cyber Security and Forensics. Current standing in 3rd Year (5th Semester) maintaining a {profileData.cgpa} CGPA.
               </p>
 
               <div className="grid grid-cols-2 gap-3 text-xs font-mono text-slate-300">

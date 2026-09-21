@@ -97,9 +97,9 @@ export const timelineData: TimelineMilestone[] = [
     stage: 'Active Studies',
     year: 'Present',
     category: 'Education',
-    description: 'Currently in the 5th semester of B.Tech CSE (Cyber Security & Forensics) at MIT-WPU with a CGPA of 7.12, actively expanding technical projects and practical engineering skill sets.',
+    description: 'Currently in the 5th semester of B.Tech CSE (Cyber Security & Forensics) at MIT-WPU with a CGPA of 7.8, actively expanding technical projects and practical engineering skill sets.',
     details: [
-      'Maintaining academic standing (7.12 CGPA)',
+      'Maintaining academic standing (7.8 CGPA)',
       'Undergoing coursework in Artificial Intelligence, Software Development, Data Analysis, DBMS, and Project Management',
       'Focusing on secure infrastructure, AI/ML applications, and robust web engineering'
     ],

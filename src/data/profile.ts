@@ -8,7 +8,7 @@ export const profileData: Profile = {
   specialization: 'Cyber Security and Forensics',
   university: 'MIT World Peace University (MIT-WPU)',
   academicYear: '3rd Year, 5th Semester',
-  cgpa: '7.12',
+  cgpa: '7.8',
   twelfthPercentage: '83.60%',
   languages: ['English', 'Hindi'],
   coursework: [
